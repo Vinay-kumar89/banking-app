@@ -1,17 +1,18 @@
 # Banking System API
 
-This is a simple backend assignment that provides basic banking functionalities such as login, checking account balance, and depositing money.
+This project is a simple backend application that provides basic banking functionalities like login, checking account balance, and depositing money.
 
-The project is built using Node.js, Express, Sequelize, and PostgreSQL.
+It is built using Node.js, Express, Sequelize, and PostgreSQL.
 
 ---
 
 ## Features
 
 - User login using email and PIN
-- Check account balance
-- Deposit money (with transaction support)
-- Swagger API documentation
+- Fetch account balance
+- Deposit money into account
+- API testing using Swagger
+- Database integration using Sequelize ORM
 
 ---
 
@@ -21,13 +22,13 @@ The project is built using Node.js, Express, Sequelize, and PostgreSQL.
 - Express.js
 - PostgreSQL
 - Sequelize ORM
-- Swagger
+- Swagger (for API documentation)
 
 ---
 
 ## Setup Instructions
 
-### 1. Install dependencies (if needed)
+### 1. Install dependencies
 
 Run the following command:
 
@@ -35,11 +36,9 @@ npm install
 
 ---
 
-### 2. Environment variables
+### 2. Create .env file
 
-A .env file is already included in the project.
-
-If needed, you can update it as per your local setup:
+Create a .env file in the root folder and add the following:
 
 DB_HOST=localhost
 DB_PORT=5433
@@ -51,7 +50,7 @@ DB_NAME=banking_db
 
 ### 3. Create database
 
-Create a database named:banking_db;
+Create a database named:banking_db
 
 You can create it using pgAdmin or SQL query:CREATE DATABASE banking_db;
 
@@ -67,7 +66,7 @@ npm start
 
 ## Swagger API
 
-After starting the server, open:
+After running the server, open:
 
 http://localhost:3000/api-docs
 
@@ -109,11 +108,20 @@ Request body:
 
 ---
 
+## Initial Data
+
+The application inserts some default users when the database is empty:
+
+- Alice (balance: 1000)
+- Bob (balance: 500)
+
+---
+
 ## Notes
 
-- Tables are created automatically on first run
-- Initial sample data is inserted if database is empty
 - Deposit API uses transaction to ensure data consistency
+- Basic error handling is implemented
+- This is a simplified version and not production-ready
 
 ---
 
